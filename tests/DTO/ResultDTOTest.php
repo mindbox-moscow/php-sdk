@@ -67,7 +67,7 @@ class ResultDTOTest extends DTOTest
         ];
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         $data            = [
             'status'                => 'some_status',

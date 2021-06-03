@@ -20,7 +20,7 @@ class DiscountInfoBalanceSpentResponseDTOTest extends DiscountInfoBalanceRespons
      */
     protected $dtoClassName = DiscountInfoBalanceSpentResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'type'                           => 'some_type',

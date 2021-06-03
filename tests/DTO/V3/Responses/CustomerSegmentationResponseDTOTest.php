@@ -21,7 +21,7 @@ class CustomerSegmentationResponseDTOTest extends DTOTest
      */
     protected $dtoClassName = CustomerSegmentationResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'segmentation' => ['someField' => 'someValue'],

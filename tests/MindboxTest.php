@@ -32,7 +32,7 @@ class MindboxTest extends TestCase
         'domainZone'     => 'test',
     ];
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->logHandler = new \Psr\Log\NullLogger();
     }
@@ -81,13 +81,14 @@ class MindboxTest extends TestCase
 
     /**
      * @dataProvider incorrectConfigProvider
-     * @expectedException \Mindbox\Exceptions\MindboxConfigException
      * @covers ::__construct
      *
      * @param array $config
      */
     public function testConstructWithIncorrectConfigWillThrowsException($config)
     {
+        $this->expectException(\Mindbox\Exceptions\MindboxConfigException::class);
+
         new Mindbox($config, $this->logHandler);
     }
 
@@ -118,10 +119,6 @@ class MindboxTest extends TestCase
             ->disableOriginalConstructor()
             ->setMethods(['getHttpClientsFactory', 'getMindboxClientFactory', 'setConfig'])
             ->getMock();
-
-        $mindboxStub->expects($this->never())
-            ->method('setConfig')
-            ->with($this->equalTo($this->correctConfig));
 
         $mindboxStub->expects($this->once())
             ->method('getHttpClientsFactory')
@@ -191,11 +188,10 @@ class MindboxTest extends TestCase
         $this->assertInstanceOf(\Mindbox\Clients\MindboxClientV3::class, $mindbox->getClient('v3'));
     }
 
-    /**
-     * @expectedException  \Mindbox\Exceptions\MindboxException
-     */
     public function testGetClientWillThrowException()
     {
+        $this->expectException(\Mindbox\Exceptions\MindboxException::class);
+
         $mindbox = new Mindbox($this->correctConfig, $this->logHandler);
 
         $mindbox->getClient('test');

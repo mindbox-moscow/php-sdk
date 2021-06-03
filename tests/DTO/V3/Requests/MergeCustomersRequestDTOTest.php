@@ -21,7 +21,7 @@ class MergeCustomersRequestDTOTest extends DTOTest
      */
     protected $dtoClassName = MergeCustomersRequestDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'customersToMerge'  => [['someField' => 'someValue']],

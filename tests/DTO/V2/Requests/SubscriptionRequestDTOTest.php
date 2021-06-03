@@ -21,7 +21,7 @@ class SubscriptionRequestDTOTest extends DTOTest
      */
     protected $dtoClassName = SubscriptionRequestDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'pointOfContact' => 'some_pointOfContact',

@@ -69,7 +69,7 @@ class StreamHttpClientTest extends TestCase
      */
     protected $streamStub;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->streamStub   = $this->getStreamStub();
         $this->streamClient = new StreamHttpClient($this->streamStub);
@@ -202,7 +202,6 @@ class StreamHttpClientTest extends TestCase
 
     /**
      * @dataProvider requestDataProvider
-     * @expectedException \Mindbox\Exceptions\MindboxHttpClientException
      *
      * @param string $url
      * @param string $method
@@ -213,6 +212,8 @@ class StreamHttpClientTest extends TestCase
      */
     public function testSendWillThrowExceptionWhenBodyIsEmpty($url, $method, $body, $headers)
     {
+        $this->expectException(\Mindbox\Exceptions\MindboxHttpClientException::class);
+
         $streamStub = $this->streamStub;
 
         $streamStub->expects($this->once())
@@ -226,7 +227,6 @@ class StreamHttpClientTest extends TestCase
 
     /**
      * @dataProvider requestDataProvider
-     * @expectedException \Mindbox\Exceptions\MindboxHttpClientException
      *
      * @param string $url
      * @param string $method
@@ -237,6 +237,8 @@ class StreamHttpClientTest extends TestCase
      */
     public function testSendWillThrowExceptionWhenHeadersIsEmpty($url, $method, $body, $headers)
     {
+        $this->expectException(\Mindbox\Exceptions\MindboxHttpClientException::class);
+
         $streamStub = $this->streamStub;
 
         $streamStub->expects($this->once())
@@ -250,7 +252,6 @@ class StreamHttpClientTest extends TestCase
 
     /**
      * @dataProvider requestDataProvider
-     * @expectedException \Mindbox\Exceptions\MindboxHttpClientException
      *
      * @param string $url
      * @param string $method
@@ -261,6 +262,8 @@ class StreamHttpClientTest extends TestCase
      */
     public function testSendWillThrowExceptionWhenStreamThrowException($url, $method, $body, $headers)
     {
+        $this->expectException(\Mindbox\Exceptions\MindboxHttpClientException::class);
+
         $streamStub = $this->streamStub;
 
         $streamStub->expects($this->once())

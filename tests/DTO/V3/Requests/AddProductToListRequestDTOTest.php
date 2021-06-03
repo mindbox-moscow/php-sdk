@@ -57,7 +57,7 @@ class AddProductToListRequestDTOTest extends DTOTest
         ]);
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'product' => [

@@ -22,7 +22,7 @@ class GiftCardStatusResponseDTOTest extends DTOTest
      */
     protected $dtoClassName = GiftCardStatusResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'ids' => ['someField' => 'someValue'],

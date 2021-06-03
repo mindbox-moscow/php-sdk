@@ -21,7 +21,7 @@ class IssuedCouponResponseDTOTest extends CouponResponseDTOTest
      */
     protected $dtoClassName = IssuedCouponResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'ids'         => ['someField' => 'someValue'],

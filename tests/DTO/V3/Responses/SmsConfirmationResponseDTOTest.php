@@ -21,7 +21,7 @@ class SmsConfirmationResponseDTOTest extends DTOTest
      */
     protected $dtoClassName = SmsConfirmationResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'processingStatus' => 'some_processingStatus',

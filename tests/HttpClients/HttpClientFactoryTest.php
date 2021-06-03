@@ -56,7 +56,7 @@ class HttpClientFactoryTest extends TestCase
         ];
     }
 
-    protected function setUp()
+    public function setUp(): void
     {
         $this->httpClientsFactory = new HttpClientFactory();
 
@@ -67,13 +67,14 @@ class HttpClientFactoryTest extends TestCase
 
     /**
      * @dataProvider      incorrectTimeoutProvider
-     * @expectedException \Mindbox\Exceptions\MindboxConfigException
      *
      * @param mixed $timeout
      * @param mixed $handlerName
      */
     public function testCreateHttpClientThrowsException($timeout, $handlerName)
     {
+        $this->expectException(\Mindbox\Exceptions\MindboxConfigException::class);
+
         $this->httpClientsFactory->createHttpClient($timeout, $handlerName);
     }
 
@@ -123,11 +124,10 @@ class HttpClientFactoryTest extends TestCase
         $this->assertInstanceOf(\Mindbox\HttpClients\StreamHttpClient::class, $client);
     }
 
-    /**
-     * @expectedException \Mindbox\Exceptions\MindboxConfigException
-     */
     public function testCreateCurlHttpClientThrowsExceptionWhenCurlIsNotLoaded()
     {
+        $this->expectException(\Mindbox\Exceptions\MindboxConfigException::class);
+
         $this->factoryStub->expects($this->atLeastOnce())
             ->method('isCurlLoaded')
             ->willReturn(false);

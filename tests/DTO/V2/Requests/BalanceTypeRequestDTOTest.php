@@ -21,7 +21,7 @@ class BalanceTypeRequestDTOTest extends DTOTest
      */
     protected $dtoClassName = BalanceTypeRequestDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'ids' => ['someField' => 'someValue'],

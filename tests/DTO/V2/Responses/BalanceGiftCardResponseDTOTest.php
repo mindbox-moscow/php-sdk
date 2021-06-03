@@ -21,7 +21,7 @@ class BalanceGiftCardResponseDTOTest extends DTOTest
      */
     protected $dtoClassName = BalanceGiftCardResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'total'     => 'some_total',

@@ -20,7 +20,7 @@ class CustomerResponseDTOTest extends CustomerIdentityResponseDTOTest
      */
     protected $dtoClassName = CustomerResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'ids'                    => ['someField' => 'someValue'],

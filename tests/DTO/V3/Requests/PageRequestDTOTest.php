@@ -21,7 +21,7 @@ class PageRequestDTOTest extends DTOTest
      */
     protected $dtoClassName = PageRequestDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'sinceDateTimeUtc' => 'some_sinceDateTimeUtc',

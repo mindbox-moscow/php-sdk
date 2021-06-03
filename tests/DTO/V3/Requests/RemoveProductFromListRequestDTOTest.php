@@ -21,7 +21,7 @@ class RemoveProductFromListRequestDTOTest extends DTOTest
      */
     protected $dtoClassName = RemoveProductFromListRequestDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'product' => [

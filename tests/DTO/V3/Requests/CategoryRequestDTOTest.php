@@ -21,7 +21,7 @@ class CategoryRequestDTOTest extends DTOTest
      */
     protected $dtoClassName = CategoryRequestDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'ids' => ['someField' => 'someValue'],

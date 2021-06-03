@@ -21,7 +21,7 @@ class PromoCodeTypeResponseDTOTest extends DTOTest
      */
     protected $dtoClassName = PromoCodeTypeResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'ids'         => ['someField' => 'someValue'],

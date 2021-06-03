@@ -21,7 +21,7 @@ class ProductListItemRequestDTOTest extends DTOTest
      */
     protected $dtoClassName = ProductListItemRequestDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'product' => ['someField' => 'someValue'],

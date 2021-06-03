@@ -34,7 +34,7 @@ class CustomerHelperTest extends AbstractMindboxHelperTest
      */
     protected $mindboxResponseStub;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->mindboxResponseStub = $this->createMock(\Mindbox\MindboxResponse::class);
 

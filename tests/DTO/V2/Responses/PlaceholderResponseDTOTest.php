@@ -21,7 +21,7 @@ class PlaceholderResponseDTOTest extends DTOTest
      */
     protected $dtoClassName = PlaceholderResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'id'      => 'some_id',

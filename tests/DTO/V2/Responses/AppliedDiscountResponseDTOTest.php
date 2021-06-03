@@ -21,7 +21,7 @@ class AppliedDiscountResponseDTOTest extends DTOTest
      */
     protected $dtoClassName = AppliedDiscountResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'type'        => 'some_type',

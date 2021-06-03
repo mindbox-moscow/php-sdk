@@ -21,7 +21,7 @@ class GiftCardRequestDTOTest extends DTOTest
      */
     protected $dtoClassName = GiftCardRequestDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'id'          => 'some_id',

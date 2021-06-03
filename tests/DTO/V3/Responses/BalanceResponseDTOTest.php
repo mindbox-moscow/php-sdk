@@ -21,7 +21,7 @@ class BalanceResponseDTOTest extends DTOTest
      */
     protected $dtoClassName = BalanceResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'totalValue'     => 'some_totalValue',

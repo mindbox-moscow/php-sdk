@@ -22,7 +22,7 @@ class AppliedPromotionResponseDTOTest extends DTOTest
      */
     protected $dtoClassName = AppliedPromotionResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'type'                  => 'some_type',

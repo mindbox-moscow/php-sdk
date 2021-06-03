@@ -21,7 +21,7 @@ class ProductResponseDTOTest extends DTOTest
      */
     protected $dtoClassName = ProductResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'ids'          => ['someField' => 'someValue'],

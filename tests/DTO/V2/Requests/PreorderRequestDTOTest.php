@@ -20,7 +20,7 @@ class PreorderRequestDTOTest extends OrderRequestDTOTest
      */
     protected $dtoClassName = PreorderRequestDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'ids'                    => ['someField' => 'someValue'],

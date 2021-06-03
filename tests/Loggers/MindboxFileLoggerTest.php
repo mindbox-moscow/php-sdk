@@ -70,7 +70,7 @@ class MindboxFileLoggerTest extends TestCase
 
     /**
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->root     = vfsStream::setup('exampleDir');
         $this->filePath = MindboxFileLogger::getLogDirPath();
@@ -126,20 +126,20 @@ class MindboxFileLoggerTest extends TestCase
 
     /**
      * @dataProvider incorrectLogLevelsDataProvider
-     * @expectedException \Mindbox\Exceptions\MindboxConfigException
      *
      * @param mixed $logLevel
      */
     public function testHandlerConstructorThrowsExceptionWhenLogLevelIncorrect($logLevel)
     {
+        $this->expectException(\Mindbox\Exceptions\MindboxConfigException::class);
+
         new MindboxFileLogger(vfsStream::url('exampleDir/logs'), $logLevel);
     }
 
-    /**
-     * @expectedException \Mindbox\Exceptions\MindboxConfigException
-     */
     public function testLoggerConstructorThrowException()
     {
+        $this->expectException(\Mindbox\Exceptions\MindboxConfigException::class);
+
         $this->root->chmod(0000);
         new MindboxFileLogger(vfsStream::url('exampleDir/logs2'));
     }

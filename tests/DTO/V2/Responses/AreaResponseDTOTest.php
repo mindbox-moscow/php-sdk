@@ -21,7 +21,7 @@ class AreaResponseDTOTest extends DTOTest
      */
     protected $dtoClassName = AreaResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'ids'  => ['someField' => 'someValue'],

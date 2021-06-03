@@ -22,7 +22,7 @@ class LineStatusResponseDTOTest extends DTOTest
      */
     protected $dtoClassName = LineStatusResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'ids' => ['someField' => 'someValue'],

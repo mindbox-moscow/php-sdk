@@ -22,7 +22,7 @@ class CreditCardResponseDTOTest extends DTOTest
      */
     protected $dtoClassName = CreditCardResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'hash' => 'some_hash',

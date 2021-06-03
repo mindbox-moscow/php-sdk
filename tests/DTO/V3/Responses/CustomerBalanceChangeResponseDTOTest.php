@@ -21,7 +21,7 @@ class CustomerBalanceChangeResponseDTOTest extends DTOTest
      */
     protected $dtoClassName = CustomerBalanceChangeResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'changeAmount'          => 'some_changeAmount',

@@ -21,7 +21,7 @@ class SetProductCountInListRequestDTOTest extends DTOTest
      */
     protected $dtoClassName = SetProductCountInListRequestDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'product' => ['someField' => 'someValue'],

@@ -21,7 +21,7 @@ class PointOfContactResponseDTOTest extends DTOTest
      */
     protected $dtoClassName = PointOfContactResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'ids' => ['someField' => 'someValue'],

@@ -21,7 +21,7 @@ class PossibleDiscountsValueResponseDTOTest extends DTOTest
      */
     protected $dtoClassName = PossibleDiscountsValueResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'discount'   => ['amount' => 'some_amount'],

@@ -22,7 +22,7 @@ class BalanceTypeResponseDTOTest extends DTOTest
      */
     protected $dtoClassName = BalanceTypeResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'ids'  => ['someField' => 'someValue'],

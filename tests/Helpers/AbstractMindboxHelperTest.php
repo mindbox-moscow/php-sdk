@@ -22,7 +22,7 @@ class AbstractMindboxHelperTest extends TestCase
      */
     protected $mindboxClientStub;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->mindboxClientStub = $this->getMindboxClientStub();
 

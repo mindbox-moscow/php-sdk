@@ -21,7 +21,7 @@ class SegmentResponseDTOTest extends DTOTest
      */
     protected $dtoClassName = SegmentResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'ids'  => ['someField' => 'someValue'],

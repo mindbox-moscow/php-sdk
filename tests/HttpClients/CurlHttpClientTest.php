@@ -24,7 +24,7 @@ class CurlHttpClientTest extends TestCase
      */
     protected $curlStub;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->curlStub   = $this->getCurlStub();
         $this->curlClient = new CurlHttpClient($this->curlStub);
@@ -292,12 +292,13 @@ Content-Length: 227',
 
     /**
      * @dataProvider requestDataProvider
-     * @expectedException \Mindbox\Exceptions\MindboxHttpClientException
      *
      * @throws \Mindbox\Exceptions\MindboxHttpClientException
      */
     public function testSendWillThrowExceptionOnCurlError()
     {
+        $this->expectException(\Mindbox\Exceptions\MindboxHttpClientException::class);
+
         $curlStub = $this->curlStub;
 
         $curlStub->expects($this->once())

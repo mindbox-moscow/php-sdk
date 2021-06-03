@@ -21,7 +21,7 @@ class ValidationMessageResponseDTOTest extends DTOTest
      */
     protected $dtoClassName = ValidationMessageResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'message'  => 'some_message',

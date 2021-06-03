@@ -416,7 +416,7 @@ class DTOTest extends TestCase
     {
         $dto = $this->getDto();
 
-        $this->assertInternalType('array', $dto::getDTOMap());
+        $this->assertIsArray($dto::getDTOMap());
     }
 
     /**
@@ -436,7 +436,7 @@ class DTOTest extends TestCase
     {
         $dto = $this->getDto();
 
-        $this->assertInternalType('string', $dto->getXmlName());
+        $this->assertIsString($dto->getXmlName());
     }
 
     /**
@@ -450,11 +450,10 @@ class DTOTest extends TestCase
         $this->assertFalse($dto->offsetExists('otherKey'));
     }
 
-    /**
-     * @expectedException \Mindbox\Exceptions\MindboxException
-     */
     public function testOffsetGet()
     {
+        $this->expectException(\Mindbox\Exceptions\MindboxException::class);
+
         $dto = $this->getDto(['key' => 'value']);
 
         $this->assertSame('value', $dto->offsetGet('key'));
@@ -479,11 +478,10 @@ class DTOTest extends TestCase
         $this->assertSame('newValue', $dto->offsetGet(key($arr)));
     }
 
-    /**
-     * @expectedException \Mindbox\Exceptions\MindboxException
-     */
     public function testOffsetUnset()
     {
+        $this->expectException(\Mindbox\Exceptions\MindboxException::class);
+
         $dto = $this->getDto(['key' => 'value']);
 
         $dto->offsetUnset('key');

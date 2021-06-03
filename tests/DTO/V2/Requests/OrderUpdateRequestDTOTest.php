@@ -20,7 +20,7 @@ class OrderUpdateRequestDTOTest extends OrderRequestDTOTest
      */
     protected $dtoClassName = OrderUpdateRequestDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'ids'                => ['someField' => 'someValue'],

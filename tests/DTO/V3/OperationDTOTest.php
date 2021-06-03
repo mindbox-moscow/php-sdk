@@ -21,7 +21,7 @@ class OperationDTOTest extends DTOTest
      */
     protected $dtoClassName = OperationDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'customer'              => ['someField' => 'someValue'],

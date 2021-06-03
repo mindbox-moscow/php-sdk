@@ -56,7 +56,7 @@ class AbstractMindboxClientTest extends TestCase
      */
     protected $dtoStub;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->domain         = $this->domain;
         $this->httpClientStub = $this->getHttpClientStub();
@@ -379,7 +379,6 @@ class AbstractMindboxClientTest extends TestCase
     }
 
     /**
-     * @expectedException \Mindbox\Exceptions\MindboxClientException
      * @throws \Mindbox\Exceptions\MindboxBadRequestException
      * @throws \Mindbox\Exceptions\MindboxClientException
      * @throws \Mindbox\Exceptions\MindboxConflictException
@@ -391,11 +390,12 @@ class AbstractMindboxClientTest extends TestCase
      */
     public function testSendPreparedRequestWillThrowExceptionWhenRequestEmpty()
     {
+        $this->expectException(\Mindbox\Exceptions\MindboxClientException::class);
+
         $this->client->sendRequest();
     }
 
     /**
-     * @expectedException \Mindbox\Exceptions\MindboxClientException
      * @throws \Mindbox\Exceptions\MindboxBadRequestException
      * @throws \Mindbox\Exceptions\MindboxClientException
      * @throws \Mindbox\Exceptions\MindboxConflictException
@@ -407,6 +407,8 @@ class AbstractMindboxClientTest extends TestCase
      */
     public function testSendPreparedRequestWillThrowExceptionWhenHttpClientThrowException()
     {
+        $this->expectException(\Mindbox\Exceptions\MindboxClientException::class);
+
         $this->httpClientStub->expects($this->once())
             ->method('send')
             ->willThrowException(new MindboxHttpClientException());

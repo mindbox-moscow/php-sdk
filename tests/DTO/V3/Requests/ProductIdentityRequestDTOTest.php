@@ -21,7 +21,7 @@ class ProductIdentityRequestDTOTest extends DTOTest
      */
     protected $dtoClassName = ProductIdentityRequestDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'ids' => ['someField' => 'someValue'],

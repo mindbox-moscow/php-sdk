@@ -93,7 +93,7 @@ class MindboxClientFactoryTest extends TestCase
         ];
     }
 
-    protected function setUp()
+    public function setUp(): void
     {
         $this->httpClientStub = $this->createMock(IHttpClient::class);
 
@@ -106,7 +106,6 @@ class MindboxClientFactoryTest extends TestCase
 
     /**
      * @dataProvider incorrectConfigProvider
-     * @expectedException \Mindbox\Exceptions\MindboxConfigException
      * @covers ::createMindboxClient()
      *
      * @param string $api
@@ -116,6 +115,8 @@ class MindboxClientFactoryTest extends TestCase
      */
     public function testCreateMindboxClientThrowsException($api, $endpoint, $secret, $domain)
     {
+        $this->expectException(\Mindbox\Exceptions\MindboxConfigException::class);
+
         $this->mindboxClientFactory->createMindboxClient(
             $api,
             $endpoint,

@@ -19,7 +19,7 @@ class MindboxOrderResponseTest extends TestCase
      */
     protected $response;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->response = new MindboxOrderResponse(
             200,

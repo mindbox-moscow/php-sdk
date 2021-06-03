@@ -25,7 +25,7 @@ class AbstractHttpClientTest extends TestCase
     /**
      * @throws \ReflectionException
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->abstractHttpClientStub = $this->getMockForAbstractClass(AbstractHttpClient::class);
         $this->requestStub = $this->getMockBuilder(\Mindbox\MindboxRequest::class)
@@ -81,12 +81,13 @@ class AbstractHttpClientTest extends TestCase
 
     /**
      * @dataProvider      incorrectHttpMethodsDataProvider
-     * @expectedException \Mindbox\Exceptions\MindboxHttpClientException
      *
      * @param string $method
      */
     public function testSendWillThrowExceptionOnIncorrectHttpMethod($method)
     {
+        $this->expectException(\Mindbox\Exceptions\MindboxHttpClientException::class);
+
         $abstractHttpClientStub = $this->abstractHttpClientStub;
 
         $requestStub = $this->requestStub;

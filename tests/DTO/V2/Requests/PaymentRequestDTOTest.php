@@ -21,7 +21,7 @@ class PaymentRequestDTOTest extends DTOTest
      */
     protected $dtoClassName = PaymentRequestDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'type'   => 'some_type',

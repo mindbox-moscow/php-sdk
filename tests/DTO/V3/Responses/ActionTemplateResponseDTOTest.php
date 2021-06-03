@@ -55,7 +55,7 @@ class ActionTemplateResponseDTOTest extends DTOTest
         ]);
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'systemName' => 'some_systemName',

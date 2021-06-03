@@ -22,7 +22,7 @@ class OrderResponseDTOTest extends DTOTest
      */
     protected $dtoClassName = OrderResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'ids'               => ['someField' => 'someValue'],

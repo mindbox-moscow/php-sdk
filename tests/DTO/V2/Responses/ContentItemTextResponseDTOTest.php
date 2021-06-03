@@ -21,7 +21,7 @@ class ContentItemTextResponseDTOTest extends DTOTest
      */
     protected $dtoClassName = ContentItemTextResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'type'          => 'some_type',

@@ -21,7 +21,7 @@ class LineRequestDTOTest extends DTOTest
      */
     protected $dtoClassName = LineRequestDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'quantity'     => 'some_quantity',

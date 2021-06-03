@@ -21,7 +21,7 @@ class DiscountBalanceRequestDTOTest extends DTOTest
      */
     protected $dtoClassName = DiscountBalanceRequestDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'type'        => 'some_type',

@@ -21,7 +21,7 @@ class DiscountCardTypeResponseDTOTest extends DTOTest
      */
     protected $dtoClassName = DiscountCardTypeResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'id' => 'some_id',

@@ -244,7 +244,7 @@ class OrderRequestDTOTest extends DTOTest
         ]);
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'ids'            => ['someField' => 'someValue'],

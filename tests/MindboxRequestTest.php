@@ -155,6 +155,6 @@ class MindboxRequestTest extends TestCase
     {
         $request = new MindboxRequest('apiVer', 'url', 'method', 'body', ['header1' => 'headerVal1']);
 
-        $this->assertInternalType('array', $request->__sleep());
+        $this->assertIsArray($request->__sleep());
     }
 }

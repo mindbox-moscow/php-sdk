@@ -21,7 +21,7 @@ class BalanceChangeKindResponseDTOTest extends DTOTest
      */
     protected $dtoClassName = BalanceChangeKindResponseDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'systemName' => 'some_systemName',

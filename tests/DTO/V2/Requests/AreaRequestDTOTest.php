@@ -21,7 +21,7 @@ class AreaRequestDTOTest extends DTOTest
      */
     protected $dtoClassName = AreaRequestDTO::class;
 
-    public function setUp()
+    public function setUp(): void
     {
         $data      = [
             'ids'  => ['someField' => 'someValue'],
