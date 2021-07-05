@@ -285,7 +285,7 @@ abstract class AbstractMindboxClient
                 $body = $context['response']['body'];
                 $arBody  = json_decode($body, true);
                 if ($arBody) {
-                    $message = substr($arBody['errorMessage'], strpos($arBody['errorMessage'], ":") + 1);
+                    $message = \trim(\array_slice(\explode(':', $arBody['errorMessage'], 2), -1)[0]);
                 } else {
                     $message = 'Bad request';
                 }
